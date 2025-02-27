@@ -16,6 +16,8 @@
         <img v-bind:src="image" alt="Gadget" />
         <h2>{{ name }}</h2>
         <p>Prix : {{ price }}€</p>
+        <p v-if="inStock">✅ En stock</p>
+        <p v-else>❌ En rupture de stock</p>
       </div>
     </div>
 
