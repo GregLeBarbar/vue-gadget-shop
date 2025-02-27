@@ -34,7 +34,6 @@ const app = Vue.createApp({
     cartTotal() {
       return this.cart.reduce((total, item) => total + item.price, 0);
     },
-
     discountedTotal() {
       return this.cartTotal >= 1000 ? this.cartTotal * 0.9 : this.cartTotal;
     },
@@ -48,5 +47,3 @@ const app = Vue.createApp({
     },
   },
 });
-
-app.mount("#app");
