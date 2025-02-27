@@ -111,6 +111,45 @@ button:disabled {
   cursor: not-allowed;
 }
 
+/* Cart Container */
+.cart {
+  background: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Cart Items */
+.cart ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  padding: 5px;
+}
+
+/* Remove Button */
+.remove-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+}
+
+.remove-btn:hover {
+  background: darkred;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .gadget-container {

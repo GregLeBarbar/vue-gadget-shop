@@ -27,7 +27,16 @@ const app = Vue.createApp({
           inStock: true,
         },
       ],
+      cart: [], // Panier initialisé comme un tableau vide
     };
+  },
+  methods: {
+    addToCart(gadget) {
+      this.cart.push(gadget); // Ajoute l'article au panier
+    },
+    removeFromCart(index) {
+      this.cart.splice(index, 1); // Supprime un article du panier par son index
+    },
   },
 });
 

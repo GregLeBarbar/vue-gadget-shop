@@ -11,13 +11,31 @@
     <div id="app">
       <h1>{{ title }}</h1>
       <p>{{ description }}</p>
+      <div class="cart">
+        <h2>🛒 Mon Panier ({{ cart.length }})</h2>
+        <ul v-if="cart.length > 0">
+          <li v-for="(item, index) in cart" :key="index">
+            {{ item.name }} - {{ item.price }}€
+            <button class="remove-btn" @click="removeFromCart(index)">
+              ❌
+            </button>
+          </li>
+        </ul>
+        <p v-else>Votre panier est vide.</p>
+      </div>
       <div class="gadget-container">
         <div class="gadget" v-for="gadget in gadgets" :key="gadget.id">
           <img v-bind:src="gadget.image" alt="Gadget" />
           <h2>{{ gadget.name }}</h2>
           <p>Prix : {{ gadget.price }}€</p>
-          <p v-if="gadget.inStock">✅ En stock</p>
-          <p v-else>❌ En rupture de stock</p>
+          <p
+            :class="{'in-stock': gadget.inStock, 'out-of-stock': !gadget.inStock}"
+          >
+            {{ gadget.inStock ? '✅ En stock' : '❌ En rupture de stock' }}
+          </p>
+          <button @click="addToCart(gadget)" :disabled="!gadget.inStock">
+            Ajouter au panier
+          </button>
         </div>
       </div>
     </div>
