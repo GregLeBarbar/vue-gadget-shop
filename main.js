@@ -30,6 +30,15 @@ const app = Vue.createApp({
       cart: [], // Panier initialisé comme un tableau vide
     };
   },
+  computed: {
+    cartTotal() {
+      return this.cart.reduce((total, item) => total + item.price, 0);
+    },
+
+    discountedTotal() {
+      return this.cartTotal >= 1000 ? this.cartTotal * 0.9 : this.cartTotal;
+    },
+  },
   methods: {
     addToCart(gadget) {
       this.cart.push(gadget); // Ajoute l'article au panier

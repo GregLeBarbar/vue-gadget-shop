@@ -22,6 +22,15 @@
           </li>
         </ul>
         <p v-else>Votre panier est vide.</p>
+
+        <!-- Affichage du total -->
+        <h3 v-if="cart.length > 0">
+          💰 Total : <span v-if="cartTotal < 1000">{{ cartTotal }}€</span>
+          <span v-else>
+            <s>{{ cartTotal }}€</s> ➝
+            <strong>{{ discountedTotal }}€ (-10%)</strong>
+          </span>
+        </h3>
       </div>
       <div class="gadget-container">
         <div class="gadget" v-for="gadget in gadgets" :key="gadget.id">

@@ -30,6 +30,24 @@ h1 {
   margin-bottom: 10px;
 }
 
+/* Total Price */
+h3 {
+  margin-top: 10px;
+  font-size: 1.4rem;
+  color: #007bff;
+}
+
+/* Price with discount */
+s {
+  color: red;
+  font-size: 1.2rem;
+}
+
+strong {
+  color: green;
+  font-size: 1.4rem;
+}
+
 p {
   font-size: 1.2rem;
   margin-bottom: 20px;
