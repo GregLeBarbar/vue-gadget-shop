@@ -11,6 +11,7 @@ const app = Vue.createApp({
           price: 799,
           image: "./assets/phone.jpg",
           inStock: true,
+          reviews: [],
         },
         {
           id: 2,
@@ -18,6 +19,7 @@ const app = Vue.createApp({
           price: 1299,
           image: "./assets/laptop.jpg",
           inStock: false,
+          reviews: [],
         },
         {
           id: 3,
@@ -25,34 +27,26 @@ const app = Vue.createApp({
           price: 199,
           image: "./assets/earbuds.jpg",
           inStock: true,
+          reviews: [],
         },
       ],
-      cart: [], // Panier initialisé comme un tableau vide
+      cart: [],
     };
-  },
-  computed: {
-    cartTotal() {
-      return this.cart.reduce(
-        (total, item) => total + item.price * item.quantity,
-        0
-      );
-    },
-    discountedTotal() {
-      return this.cartTotal >= 1000 ? this.cartTotal * 0.9 : this.cartTotal;
-    },
   },
   methods: {
     addToCart(gadget) {
       let itemInCart = this.cart.find((item) => item.id === gadget.id);
-
       if (itemInCart) {
-        itemInCart.quantity++; // Incrémente la quantité
+        itemInCart.quantity++;
       } else {
-        this.cart.push({ ...gadget, quantity: 1 }); // Ajoute avec quantité = 1
+        this.cart.push({ ...gadget, quantity: 1 });
       }
     },
     removeFromCart(index) {
-      this.cart.splice(index, 1); // 🔥 Supprime l'article complètement du panier
+      this.cart.splice(index, 1);
+    },
+    addReview(gadget, review) {
+      gadget.reviews.push(review); // Ajoute l'avis au produit concerné
     },
   },
 });
