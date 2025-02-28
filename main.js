@@ -32,7 +32,10 @@ const app = Vue.createApp({
   },
   computed: {
     cartTotal() {
-      return this.cart.reduce((total, item) => total + item.price, 0);
+      return this.cart.reduce(
+        (total, item) => total + item.price * item.quantity,
+        0
+      );
     },
     discountedTotal() {
       return this.cartTotal >= 1000 ? this.cartTotal * 0.9 : this.cartTotal;
@@ -40,10 +43,16 @@ const app = Vue.createApp({
   },
   methods: {
     addToCart(gadget) {
-      this.cart.push(gadget); // Ajoute l'article au panier
+      let itemInCart = this.cart.find((item) => item.id === gadget.id);
+
+      if (itemInCart) {
+        itemInCart.quantity++; // Incrémente la quantité
+      } else {
+        this.cart.push({ ...gadget, quantity: 1 }); // Ajoute avec quantité = 1
+      }
     },
     removeFromCart(index) {
-      this.cart.splice(index, 1); // Supprime un article du panier par son index
+      this.cart.splice(index, 1); // 🔥 Supprime l'article complètement du panier
     },
   },
 });
