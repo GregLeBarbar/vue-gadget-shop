@@ -47,6 +47,18 @@ Dans `index.html`, utilisez les accolades `{{ }}` pour afficher dynamiquement le
 
 Utilisez `v-bind:src` pour lier correctement l'image du gadget définie dans `data()` à l'élément `<img>`.
 
+✅ **HTML du gadget**
+
+Voilà la structure HTML à respecter pour que l'affichage soit identique au résultat attendu.
+
+```html
+<div class="gadget">
+  <img src />
+  <h2>Nom</h2>
+  <p>prix</p>
+</div>
+```
+
 ✅ **Vérifier le rendu :**
 
 Testez votre code en ouvrant `index.html` dans le navigateur et assurez-vous que toutes les informations s'affichent correctement.
