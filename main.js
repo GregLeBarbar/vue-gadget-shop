@@ -35,7 +35,10 @@ const app = Vue.createApp({
       this.cart.push(gadget); // Ajoute l'article au panier
     },
     removeFromCart(index) {
-      this.cart.splice(index, 1); // Supprime un article du panier par son index
+      // Supprime un article du panier par son index
+      // splice prend en 1er paramètre l'indice à partir duquel on commence à changer le tableau
+      // et en 2ème paramètre le nb d'éléments à supprimer
+      this.cart.splice(index, 1);
     },
   },
 });

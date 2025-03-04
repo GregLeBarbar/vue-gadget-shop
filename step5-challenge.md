@@ -31,25 +31,49 @@ Vous devez arriver au résultat suivant :
 
 ### 🎯 À faire :
 
-✅ **Ajouter des événements utilisateur (`@click`)**
+✅ **Bouton `Ajouter un panier`**
 
-- Ajouter un bouton **"Ajouter au panier"** et lui associer l’événement `@click="addToCart(gadget)"`.
-- Ajouter un bouton **"❌ Supprimer"** dans le panier et lui associer l’événement `@click="removeFromCart(index)"`.
+Ajouter un bouton HTML (`<button>`) sous chaque gadget et faire en sorte que ce bouton soit désactivé si le Gadget est en rupture de stock.
 
-✅ **Mettre à jour `main.js`**
+Pour cela utilisé l'attribut HTML `disabled` et la directive `v-bind`.
 
+✅ **HTML du panier**
+
+Pour vous aider à mettre en place le panier, voilà le HTML à utiliser.
+Il faudra bien sûr rendre dynamique ce code HTML grâce aux directives et aux moustaches {{ }}
+
+```html
+<div class="cart">
+  <h2>🛒 Mon Panier (0)</h2>
+  <ul>
+    <li>
+      Nom du gadget - 10€
+      <button class="remove-btn">❌</button>
+    </li>
+  </ul>
+  <p>Votre panier est vide.</p>
+</div>
+```
+
+✅ **Ajouter le concept de panier dans `main.js`**
+
+- Ajouter un tableau `card` dans `data()`
 - Ajouter la méthode **`addToCart(gadget)`** pour ajouter un article au panier.
 - Ajouter la méthode **`removeFromCart(index)`** pour supprimer un article du panier.
 
-✅ **Désactiver l’ajout d’un article en rupture de stock**
+![Concept de panier](images/step5-cart.png)
 
-- Utiliser `:disabled="!gadget.inStock"` sur le bouton "Ajouter au panier".
+Vous devez bien sûr compléter le code des 2 méthodes !
+
+✅ **Ajouter des événements utilisateur (`@click`)**
+
+- Associer l’événement `click` au bouton **"Ajouter au panier"** en utilisant la directive `v-on` afin d'appeler la méthode `addToCart`.
+- Associer l’événement `click` au bouton **"❌ Supprimer"** en utilisant la directive `v-on` afin d'appeler la méthode `removeFromCart`.
 
 ---
 
 ## 📌 Règles
 
-- Vous devez **utiliser uniquement Vue.js (CDN) et CSS**.
 - Vérifiez le rendu en ouvrant `index.html` dans votre navigateur.
 - Assurez-vous que **les interactions fonctionnent bien** (ajout et suppression).
 
