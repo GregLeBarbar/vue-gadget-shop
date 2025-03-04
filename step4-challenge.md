@@ -45,11 +45,15 @@ Vous devez arriver au résultat suivant :
 - Ajouter une condition `v-if` pour afficher **"En stock"** ou **"Rupture de stock"**.
 - Ajouter **`:key="gadget.id"`** pour optimiser le rendu de Vue.
 
-✅ **Personnaliser le style**
+✅ **HTML**
 
-- Ajoutez du CSS dans `style.css` pour organiser l’affichage des gadgets sous forme de cartes.
+Ajouter un `div` avec la classe CSS `gadget-container`:
 
----
+```html
+<div class="gadget-container">
+  <div class="gadget">...</div>
+</div>
+```
 
 ## 📌 Règles
 
