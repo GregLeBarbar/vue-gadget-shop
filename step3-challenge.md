@@ -39,15 +39,12 @@ Vous devez arriver au résultat suivant :
 - Dans `index.html`, utilisez **`v-if`** et **`v-else`** pour afficher :
   - ✅ "En stock" si `inStock` est `true`.
   - ❌ "En rupture de stock" si `inStock` est `false`.
+  - afficher cela dans un balise HTML <p>
 
 ✅ **Mettre à jour `main.js`**
 
 - Ajouter une variable **`inStock`** dans `data()` et lui attribuer `true` ou `false`.
 - Vérifier que l’affichage change dynamiquement lorsque `inStock` est modifié.
-
-✅ **Personnaliser le style**
-
-- Ajoutez du CSS dans `style.css` pour différencier visuellement les produits en stock et hors stock.
 
 ---
 
